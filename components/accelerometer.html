@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Accelerometer - MPU-6050</title>
+  <link rel="stylesheet" href="../style/main.css">
+</head>
+<body>
+  <div class="detail-page">
+    <h1>Accelerometer - MPU-6050</h1>
+    <img src="../assets/images/accelerometer.jpg" alt="Accelerometer MPU-6050">
+    <h2>🔧 Basic Information</h2>
+    <ul>
+      <li><strong>Full Name:</strong> MPU-6050 (Motion Processing Unit)</li>
+      <li><strong>Type:</strong> 6-axis IMU (3-axis Accelerometer + 3-axis Gyroscope)</li>
+      <li><strong>Manufacturer:</strong> InvenSense (now part of TDK)</li>
+    </ul>
+    <h2>📦 Sensor Specifications</h2>
+    <ul>
+      <li><strong>Accelerometer:</strong></li>
+      <ul>
+        <li>Axes: X, Y, Z</li>
+        <li>Range: ±2g, ±4g, ±8g, ±16g</li>
+        <li>Sensitivity (example for ±2g): 16,384 LSB/g</li>
+      </ul>
+      <li><strong>Gyroscope:</strong></li>
+      <ul>
+        <li>Axes: X, Y, Z</li>
+        <li>Range: ±250°/s, ±500°/s, ±1000°/s, ±2000°/s</li>
+        <li>Sensitivity (example for ±250°/s): 131 LSB/(°/s)</li>
+      </ul>
+    </ul>
+    <h2>🔌 Communication</h2>
+    <ul>
+      <li><strong>Interface:</strong> I2C (Inter-Integrated Circuit)</li>
+      <li><strong>I2C Address:</strong> Default 0x68 (can be changed to 0x69 using AD0 pin)</li>
+      <li><strong>Voltage Levels:</strong></li>
+      <ul>
+        <li>Operating Voltage: 3.3V (logic level)</li>
+        <li>Can work with 5V systems via logic level shifter or breakout board</li>
+      </ul>
+    </ul>
+    <h2>⚙️ Features</h2>
+    <ul>
+      <li><strong>DMP (Digital Motion Processor):</strong> Yes, for motion processing and sensor fusion</li>
+      <li><strong>Temperature Sensor:</strong> Built-in</li>
+      <li><strong>Interrupts:</strong> Configurable interrupt output (motion, data ready, FIFO overflow, etc.)</li>
+      <li><strong>Sampling Rate:</strong> Up to 1 kHz</li>
+      <li><strong>FIFO Buffer:</strong> 1024 bytes</li>
+    </ul>
+    <h2>🧠 Data Output</h2>
+    <ul>
+      <li><strong>Accelerometer Output:</strong> Acceleration in X, Y, Z</li>
+      <li><strong>Gyroscope Output:</strong> Angular velocity in X, Y, Z</li>
+      <li><strong>Temperature Output:</strong> Raw temperature data</li>
+    </ul>
+    <h2>🛠️ Other Details</h2>
+    <ul>
+      <li><strong>Dimensions (module):</strong> Varies by breakout board (e.g., 20mm x 15mm)</li>
+      <li><strong>Common Libraries:</strong> MPU6050.h, Wire.h (I2C), and I2Cdev.h</li>
+      <li><strong>Typical Use:</strong> Tilt sensing, motion tracking, gesture recognition, drones, robotics</li>
+    </ul>
+    <a href="../index.html" style="display: block; margin-top: 20px;">← Back to Components</a>
+  </div>
+</body>
+</html>

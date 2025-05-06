@@ -1,0 +1,325 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial Black', sans-serif;
+    background: white; /* Changed from black to white */
+    color: black; /* Changed from white to black */
+    overflow-x: hidden;
+  }
+  
+  /* Loading Screen */
+  #loading-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    transition: opacity 0.5s ease;
+  }
+
+  #loading-screen.hidden {
+    opacity: 0;
+    pointer-events: none;
+  }
+  
+  #loading-bar {
+    margin-top: 10px;
+    font-size: 1.2em;
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+  }
+  
+  #loading-percent {
+    margin-top: 5px;
+    font-size: 1.5em;
+    font-weight: bold;
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+  }
+  
+  #project-name {
+    font-size: 4em;
+    color: rgb(64, 64, 64); /* Adjusted for better contrast on white */
+    transition: color 1s linear;
+  }
+  
+  #red-tag {
+    opacity: 0;
+    background: red;
+    color: white; /* Kept white for contrast */
+    padding: 10px 20px;
+    margin-top: 20px;
+    font-weight: bold;
+    transition: opacity 1s;
+  }
+  
+  /* Main Content */
+  #main-content {
+    display: none; /* Hidden by default, shown after loading */
+    position: relative;
+    z-index: 1;
+  }
+  
+  /* Header */
+  header {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px;
+    align-items: center;
+  }
+  
+  #red-tag-static {
+    background: red;
+    color: white; /* Kept white for contrast */
+    padding: 6px 12px;
+    font-weight: bold;
+  }
+  
+  #menu-icon {
+    font-size: 24px;
+  }
+  
+  /* Background layer with glitch effect */
+  #background-layer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    pointer-events: none;
+  }
+  
+  .big-x {
+    font-size: 45vw;
+    color: black; /* Changed from white to black */
+    opacity: 0.05;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  /* Adjusted glitch red line animation */
+  .glitch-lines::before,
+  .glitch-lines::after {
+    content: '';
+    position: absolute;
+    width: 2px; /* Thin vertical line */
+    height: 100%; /* Full height of the screen */
+    background: red;
+    animation: glitch-edges 2s infinite linear; /* Updated animation */
+    opacity: 0.8; /* Slightly more visible */
+  }
+
+  .glitch-lines::before {
+    left: 0; /* Position at the left edge of the "X" */
+  }
+
+  .glitch-lines::after {
+    right: 0; /* Position at the right edge of the "X" */
+  }
+
+  /* New keyframes for infinite vertical movement */
+  @keyframes glitch-edges {
+    0% {
+        transform: translateY(-100%);
+    }
+    100% {
+        transform: translateY(100%);
+    }
+  }
+  
+  /* Main content */
+  main {
+    padding: 100px 20px;
+    position: relative;
+    z-index: 2;
+  }
+  
+  section {
+    margin-bottom: 80px;
+  }
+  
+  /* Components Section */
+  .component-grid {
+    display: flex; /* Use flexbox for layout */
+    flex-wrap: wrap; /* Allow components to wrap to the next row */
+    justify-content: space-between; /* Distribute components evenly */
+    gap: 20px; /* Add spacing between components */
+    margin-bottom: 40px; /* Add spacing below the grid */
+  }
+
+  /* Individual component styling */
+  .component {
+    text-align: center; /* Center-align text inside each component */
+    background: white;
+    color: black;
+    padding: 20px;
+    font-weight: bold;
+    transition: filter 0.3s, transform 0.3s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: calc(25% - 20px); /* Each component takes up 25% of the row */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: Add a shadow */
+    border-radius: 8px; /* Optional: Add rounded corners */
+  }
+
+  .component img {
+    width: 100px; /* Set a consistent size for images */
+    height: 100px;
+    object-fit: cover; /* Ensure the image fits within the box */
+    margin-bottom: 10px; /* Add spacing between the image and text */
+  }
+
+  .team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 20px;
+  }
+  
+  .team-member {
+    background: white;
+    color: black;
+    padding: 20px;
+    text-align: center;
+    font-weight: bold;
+    transition: filter 0.3s, transform 0.3s;
+  }
+
+  .component img, .team-member img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    margin-bottom: 10px;
+  }
+
+  .component:hover ~ .component,
+  .team-member:hover ~ .team-member,
+  .component-grid:hover .component:not(:hover),
+  .team-grid:hover .team-member:not(:hover) {
+    filter: grayscale(100%);
+  }
+
+  .component:hover, .team-member:hover {
+    transform: scale(1.05); /* Slight zoom effect */
+  }
+
+  .menu-icon {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    font-size: 2em;
+    color: red;
+    cursor: pointer;
+    z-index: 1000;
+  }
+  
+  #nav-menu {
+    display: none;
+    position: fixed;
+    top: 60px;
+    right: 20px;
+    background: white;
+    border: 1px solid red;
+    padding: 10px;
+    z-index: 1000;
+  }
+  
+  #nav-menu a {
+    display: block;
+    color: black;
+    text-decoration: none;
+    margin: 5px 0;
+  }
+
+  #nav-menu a:hover {
+    color: red;
+  }
+
+  /* Detail Page */
+  .detail-page {
+    padding: 20px;
+    text-align: center; /* Center-align headings and images */
+  }
+
+  /* Detail Page Image */
+  .detail-page img {
+    width: 80%; /* Reduce the width to 80% of the container */
+    max-width: 300px; /* Limit the maximum width to 300px */
+    height: auto; /* Maintain aspect ratio */
+    margin-bottom: 20px;
+    border: 1px solid #ddd; /* Optional: Add a border */
+    border-radius: 8px; /* Optional: Add rounded corners */
+  }
+
+  /* Center-align headings */
+  .detail-page h1, .detail-page h2 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  /* Align data under headings */
+  .detail-page ul {
+    display: inline-block; /* Make the list behave like inline content */
+    text-align: left; /* Align the text inside the list to the left */
+    margin: 0 auto; /* Center the list itself */
+    padding-left: 20px; /* Add padding for better readability */
+    line-height: 1.6; /* Improve spacing between list items */
+  }
+
+  .detail-page ul li {
+    margin-bottom: 10px; /* Add spacing between list items */
+  }
+
+  .detail-page a {
+    display: inline-block;
+    margin-top: 20px;
+    font-size: 16px;
+    color: #007bff;
+    text-decoration: none;
+  }
+
+  .detail-page a:hover {
+    text-decoration: underline;
+  }
+
+  /* Red Banner */
+  #red-banner {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: red;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    font-size: 1.5em;
+    z-index: 1001;
+    text-decoration: underline;
+  }
+
+  /* Big SL1 in the background */
+  .big-sl1 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 200px; /* Adjust size as needed */
+    font-weight: bold;
+    color: rgba(0, 0, 0, 0.1); /* Light gray color for the background */
+    z-index: -1; /* Ensure it stays in the background */
+    user-select: none; /* Prevent text selection */
+    pointer-events: none; /* Make it non-interactive */
+  }

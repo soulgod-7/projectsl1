@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Project SL1</title>
+  <link rel="stylesheet" href="style/main.css" />
+</head>
+<body>
+  <!-- Loading Screen -->
+  <div id="loading-screen">
+    <div id="project-name">ProjectSL1</div>
+    <div id="red-tag" style="text-align: left;">An Arduino Based Project</div>
+    <div id="loading-bar">Loading...</div>
+    <div id="loading-percent">0%</div>
+  </div>
+
+  <!-- Main Content -->
+  <div id="main-content" style="display: none;">
+    <header>
+      <h1 style="color: red; position: absolute; top: 10px; left: 10px;">An Arduino Based Project</h1>
+      <div class="menu-icon" onclick="toggleMenu()">☰</div>
+      <nav id="nav-menu" style="display: none;">
+        <a href="#intro">Introduction</a>
+        <a href="#components">Components</a>
+        <a href="#team">Team</a>
+        <a href="#about">About</a>
+      </nav>
+    </header>
+
+    <!-- Glitch Background -->
+    <div id="background-layer">
+      <div class="big-sl1">SL1</div>
+      <div class="glitch-lines"></div>
+    </div>
+
+    <main>
+      <!-- Introduction Section -->
+      <section id="intro">
+        <h1>Welcome to Project SL1</h1>
+        <p>This is an Arduino-powered smart posture correction device...</p>
+        <!-- YouTube Video Placeholder -->
+        <div style="margin-top: 20px;">
+          <iframe 
+            width="560" 
+            height="315" 
+            src="https://www.youtube.com/embed/your-video-id" 
+            title="YouTube video player" 
+            frameborder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+            allowfullscreen>
+          </iframe>
+        </div>
+      </section>
+
+      <!-- Project Overview Section -->
+      <section id="overview">
+        <h2>Project Overview</h2>
+        <p>This project is an Arduino-powered smart posture correction device designed to improve posture and prevent back pain.</p>
+      </section>
+
+      <!-- Components Section -->
+      <section id="components">
+        <h2>Components</h2>
+        <div class="component-grid">
+          <!-- First Row (4 components) -->
+          <a href="components/arduino-uno.html" class="component">
+            <img src="assets/images/arduino-uno.png" alt="Arduino UNO">
+            Arduino UNO
+          </a>
+          <a href="components/accelerometer.html" class="component">
+            <img src="assets/images/accelerometer.jpg" alt="Accelerometer MPU-6050">
+            Accelerometer MPU-6050
+          </a>
+          <a href="components/bread-board.html" class="component">
+            <img src="assets/images/bread-board.jpg" alt="Breadboard">
+            Breadboard
+          </a>
+          <a href="components/jumper-wire.html" class="component">
+            <img src="assets/images/jumperwire.jpg" alt="Jumper Wires">
+            Jumper Wires
+          </a>
+          <!-- Second Row (4 components) -->
+          <a href="components/1n4007.html" class="component">
+            <img src="assets/images/diode.jpg" alt="1N4007 Diode">
+            1N4007 Diode
+          </a>
+          <a href="components/transistor.html" class="component">
+            <img src="assets/images/transistor.png" alt="2N2222 Transistor">
+            2N2222 Transistor
+          </a>
+          <a href="components/resistor.html" class="component">
+            <img src="assets/images/resistor.jpg" alt="Resistor">
+            Resistor
+          </a>
+          <a href="components/battery.html" class="component">
+            <img src="assets/images/battery9v.jpg" alt="9V Battery">
+            9V Battery
+          </a>
+          <!-- Third Row (2 components) -->
+          <a href="components/vibrationmotor.html" class="component">
+            <img src="assets/images/vibration-motor.jpg" alt="Coin Vibration Motor">
+            Coin Vibration Motor
+          </a>
+          <a href="components/ceramic-capacitor.html" class="component">
+            <img src="assets/images/ceramic-capacitor.jpg" alt="Ceramic Capacitor">
+            Ceramic Capacitor
+          </a>
+        </div>
+      </section>
+
+      <!-- Team Members Section -->
+      <section id="team">
+        <h2>Team</h2>
+        <div class="team-grid">
+          <div class="team-member">
+            <img src="assets\images\abhinav.jpg" alt="Abhinav K">
+            <p>Abhinav K</p>
+          </div>
+          <div class="team-member">
+            <img src="assets\images\aarif.jpg" alt="Aarif Nazar">
+            <p>Aarif Nazar</p>
+          </div>
+          <div class="team-member">
+            <img src="assets\images\shiv.jpg" alt="Shivshankar">
+            <p>Shivshankar</p>
+          </div>
+          <div class="team-member">
+            <img src="assets\images\nafih.jpg" alt="Nafih Jidan">
+            <p>Nafih Jidan</p>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="script/main.js"></script>
+</body>
+</html>
