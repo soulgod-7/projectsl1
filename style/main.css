@@ -7,6 +7,16 @@ body, html {
     overflow-x: hidden;
   }
   
+  /* Reduce boldness for all content except headings */
+  body, p, a, li, span, div {
+    font-weight: 400; /* Normal font weight */
+  }
+
+  /* Keep headings bold */
+  h1, h2, h3, h4, h5, h6 {
+    font-weight: bold; /* Ensure headings remain bold */
+  }
+  
   /* Loading Screen */
   #loading-screen {
     position: fixed;
@@ -159,7 +169,6 @@ body, html {
     margin-bottom: 40px; /* Add spacing below the grid */
   }
 
-  /* Individual component styling */
   .component {
     text-align: center; /* Center-align text inside each component */
     background: white;
@@ -174,6 +183,7 @@ body, html {
     width: calc(25% - 20px); /* Each component takes up 25% of the row */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: Add a shadow */
     border-radius: 8px; /* Optional: Add rounded corners */
+    text-decoration: none; /* Remove underline from links */
   }
 
   .component img {
@@ -181,6 +191,35 @@ body, html {
     height: 100px;
     object-fit: cover; /* Ensure the image fits within the box */
     margin-bottom: 10px; /* Add spacing between the image and text */
+    transition: filter 0.3s; /* Smooth transition for grayscale effect */
+  }
+
+  .component:hover img {
+    transform: scale(1.05); /* Slight zoom effect on hover */
+  }
+
+  .component:hover {
+    transform: scale(1.05); /* Slight zoom effect on hover */
+  }
+
+  .component:hover img,
+  .component:hover p {
+    filter: none; /* Remove grayscale on hover */
+  }
+
+  .component p {
+    color: red; /* Set the text color to red */
+    font-weight: bold; /* Keep the text bold */
+    text-decoration: none; /* Remove underline */
+  }
+
+  /* Ensure names stay red even when other components are grayscale */
+  .component-grid:hover .component:not(:hover) img {
+    filter: grayscale(100%); /* Apply grayscale to non-hovered components */
+  }
+
+  .component-grid:hover .component:not(:hover) p {
+    color: red; /* Keep the names red even when other components are grayscale */
   }
 
   .team-grid {
