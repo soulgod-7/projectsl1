@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Switch - Project SL1</title>
+  <link rel="stylesheet" href="../style/main.css">
+</head>
+<body>
+  <header>
+    <h1 style="text-align: center;">Switch</h1>
+  </header>
+  <main>
+    <section id="switch-details" style="text-align: center;">
+      <!-- Image Section -->
+      <div class="component-image">
+        <img src="../assets/images/switch.jpg" alt="Switch" style="width: 300px; height: auto; margin: 20px auto;">
+      </div>
+      <!-- Content Section -->
+      <h2>🔧 Basic Information</h2>
+      <ul style="list-style: none; padding: 0;">
+        <li><strong>Name:</strong> ON/OFF Switch</li>
+        <li><strong>Type:</strong> Mechanical switch (toggle, slide, pushbutton, rocker, etc.)</li>
+        <li><strong>Function:</strong> Opens or closes an electrical circuit manually</li>
+      </ul>
+      <h2>⚙️ Common Types</h2>
+      <ul style="list-style: none; padding: 0;">
+        <li>Toggle Switch – Lever flicks up/down</li>
+        <li>Slide Switch – Slider moves side-to-side</li>
+        <li>Rocker Switch – Rocking action (like a wall switch)</li>
+        <li>Pushbutton Switch</li>
+        <li>Momentary (e.g., doorbell)</li>
+        <li>Latch-type (push once ON, push again OFF)</li>
+        <li>Tactile Switch – Small, used on breadboards</li>
+      </ul>
+      <h2>⚡ Electrical Specs</h2>
+      <ul style="list-style: none; padding: 0;">
+        <li><strong>Voltage Rating:</strong> Typically 12V or 24V (check datasheet)</li>
+        <li><strong>Current Rating:</strong> Usually ~0.5A to 5A</li>
+        <li><strong>Poles & Throws:</strong></li>
+        <ul style="list-style: none; padding: 0;">
+          <li>SPST (Single Pole Single Throw) – Basic ON/OFF</li>
+          <li>SPDT – ON/ON or ON/OFF/ON (used for switching between circuits)</li>
+        </ul>
+      </ul>
+      <h2>🧱 Applications</h2>
+      <ul style="list-style: none; padding: 0;">
+        <li>Power control for Arduino, modules, motors, etc.</li>
+        <li>Manual control in DIY electronics projects</li>
+        <li>Reset buttons or input triggers</li>
+        <li>Powering sensors or vibration motors selectively</li>
+      </ul>
+      <h2>⚠️ Connection Tips</h2>
+      <p>
+        Wire in series with the power supply to act as a master power switch. For microcontroller input, connect one side to a digital pin and the other to GND, with a pull-up resistor (or use the internal pull-up resistor via code).
+      </p>
+    </section>
+    <!-- Back to Components Link -->
+    <div style="text-align: center; margin-top: 20px;">
+      <a href="../index.html#components" style="text-decoration: none; color: blue; font-size: 1.2em;">← Back to Components</a>
+    </div>
+  </main>
+  <footer>
+    <p style="text-align: center;">© 2025 Project SL1. All rights reserved.</p>
+  </footer>
+</body>
+</html>

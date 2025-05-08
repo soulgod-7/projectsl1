@@ -17,20 +17,26 @@
 
   <!-- Main Content -->
   <div id="main-content" style="display: none;">
-    <header>
-      <h1 style="color: red; position: absolute; top: 20px; left: 20px;">POSTURE CORRECTING BELT</h1>
-      <div class="menu-icon" onclick="toggleMenu()">☰</div>
-      <nav id="nav-menu" style="display: none;">
+    <header style="position: fixed; top: 0; left: 0; width: 100%; background-color: white; z-index: 1000; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); padding: 5px 20px;">
+      <h1 class="main-heading" style="color: red; text-align: center; margin: 5px 0;">Posture Correcting Belt</h1>
+      <div class="menu-icon" onclick="toggleMenu()" style="cursor: pointer;">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <nav id="nav-menu" style="display: none; text-align: center;">
         <a href="#intro">Introduction</a>
         <a href="#components">Components</a>
         <a href="#team">Team</a>
-        <a href="assets\projectsl1-overview.pdf" download>Project Report</a>
+        <a href="Buy-components.html">Buy Components</a>
+        <a href="assets/projectsl1-overview.pdf" download>Project Report</a>
+        <a href="assets/projectsl1 ppt.pdf" download>Project PPT</a>
         <a href="contact.html">Contact</a>
       </nav>
     </header>
 
     <!-- Glitch Background -->
-    <div id="background-layer">
+    <div id="background-layer" style="margin-top: 100px;">
       <div class="big-sl1">SL1</div>
       <div class="glitch-lines"></div>
     </div>
@@ -39,13 +45,22 @@
       <!-- Introduction Section -->
       <section id="intro">
         <h1>Welcome to Project SL1</h1>
-        <p>This is an Arduino-powered smart posture correction device...</p>
+        <h3 style="color: red;">Say hello to smarter posture</h3>
+        <p>
+          Project SL1 is an Arduino-powered wearable designed to help you sit and stand the right way—without second-guessing yourself. Built for students, professionals, and anyone tired of back pain, our belt tracks your posture and gives gentle feedback when you start to slouch.
+        </p>
+        <p>
+          No complex apps. No expensive gear. Just simple, effective tech that helps you build better habits over time.
+        </p>
+        <p>
+          Stay aligned. Stay confident.
+        </p>
         <!-- YouTube Video Placeholder -->
         <div style="margin-top: 20px;">
           <iframe 
             width="560" 
             height="315" 
-            src="https://www.youtube.com/embed/your-video-id" 
+            src="https://www.youtube.com/embed/S5LfNho7tAk?si=MT37UC8EMeR_tcGP" 
             title="YouTube video player" 
             frameborder="0" 
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
@@ -55,9 +70,17 @@
       </section>
 
       <!-- Project Overview Section -->
-      <section id="overview">
+      <section id="overview" class="black-banner">
         <h2>Project Overview</h2>
-        <p>This project is an Arduino-powered smart posture correction device designed to improve posture and prevent back pain.</p>
+        <p>
+          The posture correction belt is an innovative wearable device designed to help users maintain proper spinal alignment, reducing the risk of chronic back pain and posture-related health issues. The core of the system is built around an Arduino Uno microcontroller integrated with an MPU6050 accelerometer and gyroscope sensor. This sensor continuously monitors the orientation and movement of the upper body, specifically targeting spinal tilt or slouching.
+        </p>
+        <p>
+          When a deviation from the calibrated upright posture is detected and sustained for more than four seconds, the system activates a coin-type vibration motor. This motor delivers a subtle, non-intrusive vibration pulse to alert the user, encouraging them to correct their posture. The vibration is controlled in an intermittent 1-second on/off cycle to avoid discomfort while remaining effective.
+        </p>
+        <p>
+          Compact, lightweight, and easily integrated into an elastic chest-worn belt, the device ensures comfort and discretion for everyday use. The product is especially suitable for students, office workers, and individuals with sedentary lifestyles, offering a proactive solution to long-term spinal health.
+        </p>
       </section>
 
       <!-- Components Section -->
@@ -98,7 +121,7 @@
             <img src="assets/images/battery9v.jpg" alt="9V Battery">
             <p>9V Battery</p>
           </a>
-          <!-- Third Row (2 components) -->
+          <!-- Third Row (3 components) -->
           <a href="components/vibrationmotor.html" class="component">
             <img src="assets/images/vibration-motor.jpg" alt="Coin Vibration Motor">
             <p>Coin Vibration Motor</p>
@@ -107,11 +130,15 @@
             <img src="assets/images/ceramic-capacitor.jpg" alt="Ceramic Capacitor">
             <p>Ceramic Capacitor</p>
           </a>
+          <a href="components/switch.html" class="component">
+            <img src="assets/images/switch.jpg" alt="Switch">
+            <p>Switch</p>
+          </a>
         </div>
       </section>
 
       <!-- Team Members Section -->
-      <section id="team">
+      <section id="team" class="black-banner">
         <h2>Team</h2>
         <div class="team-grid">
           <div class="team-member">
@@ -127,7 +154,7 @@
             <p>Shivshankar</p>
           </div>
           <div class="team-member">
-            <img src="assets\images\nafih.jpg" alt="Nafih Jidan">
+            <img src="assets\images\nafi2.jpg" alt="Nafih Jidan">
             <p>Nafih Jidan</p>
           </div>
         </div>
@@ -136,5 +163,22 @@
   </div>
 
   <script src="script/main.js"></script>
+  <script>
+    // Toggle the menu and change the icon
+    function toggleMenu() {
+      const menuIcon = document.querySelector('.menu-icon');
+      const navMenu = document.getElementById('nav-menu');
+
+      // Toggle the "active" class on the menu icon
+      menuIcon.classList.toggle('active');
+
+      // Show or hide the navigation menu
+      if (navMenu.style.display === 'block') {
+        navMenu.style.display = 'none';
+      } else {
+        navMenu.style.display = 'block';
+      }
+    }
+  </script>
 </body>
 </html>
