@@ -224,9 +224,9 @@ body, html {
   }
 
   .team-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-    gap: 20px;
+    display: grid !important;
+    grid-template-columns: repeat(4, 1fr) !important;
+    gap: 20px !important;
     margin-top: 20px; /* Add spacing above the grid */
   }
   
@@ -237,6 +237,14 @@ body, html {
     text-align: center;
     font-weight: bold;
     transition: filter 0.3s, transform 0.3s;
+  }
+
+  .team-member img {
+    width: 100px !important;
+    height: 100px !important;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 10px;
   }
 
   .component img, .team-member img {
