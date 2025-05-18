@@ -95,14 +95,7 @@ body, html {
   }
   
   #menu-icon {
-    width: 30px;
-    height: 25px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    cursor: pointer;
-    z-index: 1000;
-    margin-left: auto; /* Push to the right inside header */
+    font-size: 24px;
   }
   
   /* Background layer with glitch effect */
@@ -276,6 +269,9 @@ body, html {
 
   /* Menu Icon Styling */
   .menu-icon {
+    position: fixed;
+    top: 20px;
+    right: 20px;
     width: 30px;
     height: 25px;
     display: flex;
@@ -283,7 +279,6 @@ body, html {
     justify-content: space-between;
     cursor: pointer;
     z-index: 1000;
-    margin-left: auto; /* Push to the right inside header */
   }
 
   .menu-icon span {
@@ -476,20 +471,14 @@ body, html {
     gap: 10px !important;
   }
   .team-grid {
-    grid-template-columns: repeat(2, 1fr) !important;
-    gap: 10px !important;
+    grid-template-columns: repeat(4, 1fr) !important;
+    gap: 20px !important;
   }
   section, .component, .team-member {
     padding: 8px !important;
   }
   #intro h1, #intro h3 {
     font-size: 1.1em !important;
-  }
-  .menu-icon {
-    position: static !important;
-    top: auto !important;
-    right: auto !important;
-    margin-left: auto !important;
   }
 }
 
@@ -531,15 +520,5 @@ body, html {
     height: 45vw !important;
     min-height: 120px;
     max-height: 200px;
-  }
-}
-
-/* Always keep at least 2 columns for team grid, even on mobile */
-.team-grid {
-  grid-template-columns: repeat(2, 1fr) !important;
-}
-@media (min-width: 700px) {
-  .team-grid {
-    grid-template-columns: repeat(4, 1fr) !important;
   }
 }
