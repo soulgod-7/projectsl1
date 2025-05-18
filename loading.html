@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Loading - ProjectSL1</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+    }
+    body {
+      width: 100vw;
+      height: 100vh;
+      background: url('assets/images/posture-belt.jpg') no-repeat center center / cover, #fff;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+    }
+    .center-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      width: 100vw;
+      position: absolute;
+      top: 0; left: 0;
+      z-index: 2;
+    }
+    .project-title {
+      font-size: 2.8em;
+      font-weight: 900;
+      text-align: center;
+      margin-bottom: 20px;
+      letter-spacing: 2px;
+      text-shadow: 1px 1px 8px #fff;
+      color: white;
+      transition: color 0.3s;
+    }
+    .red-tag {
+      background: #ff5252;
+      color: #111;
+      padding: 8px 24px;
+      border-radius: 20px;
+      font-size: 1.2em;
+      font-weight: bold;
+      margin-bottom: 30px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    }
+    .loading-bottom-left, .loading-bottom-right {
+      position: fixed;
+      bottom: 18px;
+      font-size: 1.1em;
+      font-family: Arial, sans-serif;
+      z-index: 10;
+      color: #222;
+      text-shadow: 1px 1px 6px #fff;
+    }
+    .loading-bottom-left {
+      left: 24px;
+      color: #d32f2f;
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
+    .loading-bottom-right {
+      right: 24px;
+      font-weight: bold;
+      background: rgba(255,255,255,0.7);
+      padding: 4px 16px;
+      border-radius: 12px;
+    }
+    @media (max-width: 500px) {
+      .center-content { padding: 0 10px; }
+      .project-title { font-size: 1.5em; }
+      .red-tag { font-size: 1em; }
+    }
+  </style>
+</head>
+<body>
+  <div class="center-content">
+    <div class="project-title" id="project-title">PROJECTSL1</div>
+    <div class="red-tag">An Arduino based Project</div>
+  </div>
+  <div class="loading-bottom-left">Loading...</div>
+  <div class="loading-bottom-right" id="loading-percent">0%</div>
+  <script>
+    // Only show loading page once per session
+    if (sessionStorage.getItem('sl1_loaded')) {
+      window.location.replace('index.html');
+    }
+    let percent = 0;
+    const percentText = document.getElementById('loading-percent');
+    const title = document.getElementById('project-title');
+    const startColor = [255,255,255]; // white
+    const endColor = [211,47,47]; // #d32f2f red
+    function lerp(a, b, t) {
+      return Math.round(a + (b - a) * t);
+    }
+    const interval = setInterval(() => {
+      percent++;
+      if (percent > 100) percent = 100;
+      percentText.textContent = percent + '%';
+      // Fade color from white to red
+      const t = percent / 100;
+      const r = lerp(startColor[0], endColor[0], t);
+      const g = lerp(startColor[1], endColor[1], t);
+      const b = lerp(startColor[2], endColor[2], t);
+      title.style.color = `rgb(${r},${g},${b})`;
+      if (percent >= 100) {
+        clearInterval(interval);
+        sessionStorage.setItem('sl1_loaded', 'yes');
+        setTimeout(() => {
+          window.location.replace('index.html');
+        }, 300); // Small delay for smoothness
+      }
+    }, 50); // 100 steps * 50ms = 5000ms = 5 seconds
+  </script>
+</body>
+</html>

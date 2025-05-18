@@ -328,20 +328,26 @@ body, html {
 
   /* Detail Page */
   .detail-page {
-    padding: 20px;
-    text-align: center; /* Center-align headings and images */
+    text-align: left;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 24px 12px;
   }
 
-  /* Detail Page Image */
+  .detail-page h1,
   .detail-page img {
-    width: 80%; /* Reduce the width to 80% of the container */
-    max-width: 300px; /* Limit the maximum width to 300px */
-    height: auto; /* Maintain aspect ratio */
-    margin-bottom: 20px;
-    border: 1px solid #ddd; /* Optional: Add a border */
-    border-radius: 8px; /* Optional: Add rounded corners */
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
   }
 
+  .detail-page img {
+    margin-bottom: 18px;
+    max-width: 220px;
+    height: auto;
+  }
+  
   /* Center-align headings */
   .detail-page h1, .detail-page h2 {
     text-align: center;
@@ -447,4 +453,72 @@ body, html {
   color: grey; /* Set text color to grey */
   font-size: 1.1em; /* Optional: Adjust font size for readability */
   line-height: 1.6; /* Optional: Improve line spacing */
+}
+
+/* Responsive adjustments for mobile screens */
+@media (max-width: 900px) {
+  header {
+    padding: 8px 3vw !important;
+  }
+  .main-heading {
+    font-size: 1.2em !important;
+  }
+  #background-layer {
+    margin-top: 70px !important;
+  }
+  .component-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 10px !important;
+  }
+  .team-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 10px !important;
+  }
+  section, .component, .team-member {
+    padding: 8px !important;
+  }
+  #intro h1, #intro h3 {
+    font-size: 1.1em !important;
+  }
+}
+
+/* Extra small screens */
+@media (max-width: 600px) {
+  header {
+    padding: 4px 2vw !important;
+  }
+  .main-heading {
+    font-size: 1em !important;
+  }
+  .component-grid, .team-grid {
+    grid-template-columns: 1fr !important;
+  }
+  #intro h1, #intro h3 {
+    font-size: 1em !important;
+  }
+  .team-member img, .component img {
+    width: 100% !important;
+    height: auto !important;
+  }
+  .team-grid, .component-grid {
+    gap: 8px !important;
+  }
+}
+
+/* Responsive YouTube video */
+#intro iframe {
+  width: 100% !important;
+  height: 56vw !important;
+  max-width: 560px;
+  max-height: 315px;
+  min-height: 180px;
+  display: block;
+  margin: 0 auto;
+}
+@media (max-width: 600px) {
+  #intro iframe {
+    height: 45vw !important;
+    min-height: 120px;
+    max-height: 200px;
+  }
 }
