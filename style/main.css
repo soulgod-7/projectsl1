@@ -95,7 +95,14 @@ body, html {
   }
   
   #menu-icon {
-    font-size: 24px;
+    width: 30px;
+    height: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+    z-index: 1000;
+    margin-left: auto; /* Push to the right inside header */
   }
   
   /* Background layer with glitch effect */
@@ -269,9 +276,6 @@ body, html {
 
   /* Menu Icon Styling */
   .menu-icon {
-    position: fixed;
-    top: 20px;
-    right: 20px;
     width: 30px;
     height: 25px;
     display: flex;
@@ -279,6 +283,7 @@ body, html {
     justify-content: space-between;
     cursor: pointer;
     z-index: 1000;
+    margin-left: auto; /* Push to the right inside header */
   }
 
   .menu-icon span {
@@ -480,6 +485,12 @@ body, html {
   #intro h1, #intro h3 {
     font-size: 1.1em !important;
   }
+  .menu-icon {
+    position: static !important;
+    top: auto !important;
+    right: auto !important;
+    margin-left: auto !important;
+  }
 }
 
 /* Extra small screens */
@@ -520,5 +531,15 @@ body, html {
     height: 45vw !important;
     min-height: 120px;
     max-height: 200px;
+  }
+}
+
+/* Always keep at least 2 columns for team grid, even on mobile */
+.team-grid {
+  grid-template-columns: repeat(2, 1fr) !important;
+}
+@media (min-width: 700px) {
+  .team-grid {
+    grid-template-columns: repeat(4, 1fr) !important;
   }
 }
