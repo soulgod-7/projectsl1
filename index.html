@@ -8,7 +8,10 @@
 </head>
 <body>
   <!-- Loading Screen -->
-  <div id="loading-screen">
+  <div id="loading-screen"
+       style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; 
+              background: url('assets/images/posture-belt.jpg') no-repeat center center / cover, white;
+              z-index: 2000; display: flex; flex-direction: column; justify-content: center; align-items: center;">
     <div id="project-name">ProjectSL1</div>
     <div id="red-tag" style="text-align: left;">An Arduino Based Project</div>
     <div id="loading-bar">Loading...</div>
@@ -29,7 +32,7 @@
         <a href="#components">Components</a>
         <a href="#team">Team</a>
         <a href="Buy-components.html">Buy Components</a>
-        <a href="assets/projectsl1-overview.pdf" download>Project Report</a>
+        <a href="assets/projectsl1_team11report.docx" download>Project Report</a>
         <a href="assets/projectsl1 ppt.pdf" download>Project PPT</a>
         <a href="contact.html">Contact</a>
       </nav>
@@ -43,29 +46,35 @@
 
     <main>
       <!-- Introduction Section -->
-      <section id="intro">
-        <h1>Welcome to Project SL1</h1>
-        <h3 style="color: red;">Say hello to smarter posture</h3>
-        <p>
-          Project SL1 is an Arduino-powered wearable designed to help you sit and stand the right way—without second-guessing yourself. Built for students, professionals, and anyone tired of back pain, our belt tracks your posture and gives gentle feedback when you start to slouch.
-        </p>
-        <p>
-          No complex apps. No expensive gear. Just simple, effective tech that helps you build better habits over time.
-        </p>
-        <p>
-          Stay aligned. Stay confident.
-        </p>
-        <!-- YouTube Video Placeholder -->
-        <div style="margin-top: 20px;">
-          <iframe 
-            width="560" 
-            height="315" 
-            src="https://www.youtube.com/embed/S5LfNho7tAk?si=MT37UC8EMeR_tcGP" 
-            title="YouTube video player" 
-            frameborder="0" 
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-            allowfullscreen>
-          </iframe>
+      <section id="intro" style="background: url('assets/images/posture-belt.jpg') no-repeat center center; background-size: cover; position: relative;">
+        <!-- Semi-Transparent Overlay -->
+        <div style="background-color: rgba(255, 255, 255, 0.7); position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1;"></div>
+        
+        <!-- Content -->
+        <div style="position: relative; z-index: 2; padding: 20px;">
+          <h1>Welcome to Project SL1</h1>
+          <h3 style="color: red;">Say hello to smarter posture</h3>
+          <p>
+            Project SL1 is an Arduino-powered wearable designed to help you sit and stand the right way—without second-guessing yourself. Built for students, professionals, and anyone tired of back pain, our belt tracks your posture and gives gentle feedback when you start to slouch.
+          </p>
+          <p>
+            No complex apps. No expensive gear. Just simple, effective tech that helps you build better habits over time.
+          </p>
+          <p>
+            Stay aligned. Stay confident.
+          </p>
+          <!-- YouTube Video Placeholder -->
+          <div style="margin-top: 20px;">
+            <iframe 
+              width="560" 
+              height="315" 
+              src="https://www.youtube.com/embed/S5LfNho7tAk?si=MT37UC8EMeR_tcGP" 
+              title="YouTube video player" 
+              frameborder="0" 
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+              allowfullscreen>
+            </iframe>
+          </div>
         </div>
       </section>
 
@@ -179,6 +188,13 @@
         navMenu.style.display = 'block';
       }
     }
+
+    window.addEventListener('load', function() {
+      setTimeout(function() {
+        document.getElementById('loading-screen').style.display = 'none';
+        document.getElementById('main-content').style.display = 'block';
+      }, 4000); // 4000ms = 4 seconds
+    });
   </script>
 </body>
 </html>
